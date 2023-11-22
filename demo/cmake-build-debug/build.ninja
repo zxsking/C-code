@@ -41,6 +41,72 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = F$:/C-code/demo/cmake-build-debug/
 # =============================================================================
+# Object build statements for EXECUTABLE target demo2.c
+
+
+#############################################
+# Order-only phony target for demo2.c
+
+build cmake_object_order_depends_target_demo2.c: phony || CMakeFiles/demo2.c.dir
+
+build CMakeFiles/demo2.c.dir/demo2.c.obj: C_COMPILER__demo2.2ec_Debug F$:/C-code/demo/demo2.c || cmake_object_order_depends_target_demo2.c
+  DEP_FILE = CMakeFiles\demo2.c.dir\demo2.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu90
+  OBJECT_DIR = CMakeFiles\demo2.c.dir
+  OBJECT_FILE_DIR = CMakeFiles\demo2.c.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target demo2.c
+
+
+#############################################
+# Link the executable demo2.c.exe
+
+build demo2.c.exe: C_EXECUTABLE_LINKER__demo2.2ec_Debug CMakeFiles/demo2.c.dir/demo2.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\demo2.c.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = demo2.c.exe
+  TARGET_IMPLIB = libdemo2.c.dll.a
+  TARGET_PDB = demo2.c.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target demo3.c
+
+
+#############################################
+# Order-only phony target for demo3.c
+
+build cmake_object_order_depends_target_demo3.c: phony || CMakeFiles/demo3.c.dir
+
+build CMakeFiles/demo3.c.dir/demo3.c.obj: C_COMPILER__demo3.2ec_Debug F$:/C-code/demo/demo3.c || cmake_object_order_depends_target_demo3.c
+  DEP_FILE = CMakeFiles\demo3.c.dir\demo3.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu90
+  OBJECT_DIR = CMakeFiles\demo3.c.dir
+  OBJECT_FILE_DIR = CMakeFiles\demo3.c.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target demo3.c
+
+
+#############################################
+# Link the executable demo3.c.exe
+
+build demo3.c.exe: C_EXECUTABLE_LINKER__demo3.2ec_Debug CMakeFiles/demo3.c.dir/demo3.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\demo3.c.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = demo3.c.exe
+  TARGET_IMPLIB = libdemo3.c.dll.a
+  TARGET_PDB = demo3.c.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target main.c
 
 
@@ -51,7 +117,7 @@ build cmake_object_order_depends_target_main.c: phony || CMakeFiles/main.c.dir
 
 build CMakeFiles/main.c.dir/main.c.obj: C_COMPILER__main.2ec_Debug F$:/C-code/demo/main.c || cmake_object_order_depends_target_main.c
   DEP_FILE = CMakeFiles\main.c.dir\main.c.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu99
+  FLAGS = -g -fdiagnostics-color=always -std=gnu90
   OBJECT_DIR = CMakeFiles\main.c.dir
   OBJECT_FILE_DIR = CMakeFiles\main.c.dir
 
@@ -72,6 +138,39 @@ build main.c.exe: C_EXECUTABLE_LINKER__main.2ec_Debug CMakeFiles/main.c.dir/main
   TARGET_FILE = main.c.exe
   TARGET_IMPLIB = libmain.c.dll.a
   TARGET_PDB = main.c.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target main1.c
+
+
+#############################################
+# Order-only phony target for main1.c
+
+build cmake_object_order_depends_target_main1.c: phony || CMakeFiles/main1.c.dir
+
+build CMakeFiles/main1.c.dir/main1.c.obj: C_COMPILER__main1.2ec_Debug F$:/C-code/demo/main1.c || cmake_object_order_depends_target_main1.c
+  DEP_FILE = CMakeFiles\main1.c.dir\main1.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu90
+  OBJECT_DIR = CMakeFiles\main1.c.dir
+  OBJECT_FILE_DIR = CMakeFiles\main1.c.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target main1.c
+
+
+#############################################
+# Link the executable main1.c.exe
+
+build main1.c.exe: C_EXECUTABLE_LINKER__main1.2ec_Debug CMakeFiles/main1.c.dir/main1.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\main1.c.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = main1.c.exe
+  TARGET_IMPLIB = libmain1.c.dll.a
+  TARGET_PDB = main1.c.exe.dbg
 
 
 #############################################
@@ -99,7 +198,13 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build demo2.c: phony demo2.c.exe
+
+build demo3.c: phony demo3.c.exe
+
 build main.c: phony main.c.exe
+
+build main1.c: phony main1.c.exe
 
 # =============================================================================
 # Folder targets.
@@ -109,7 +214,7 @@ build main.c: phony main.c.exe
 #############################################
 # Folder: F:/C-code/demo/cmake-build-debug
 
-build all: phony main.c.exe
+build all: phony demo2.c.exe demo3.c.exe main.c.exe main1.c.exe
 
 # =============================================================================
 # Built-in targets
