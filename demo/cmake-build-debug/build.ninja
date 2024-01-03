@@ -73,6 +73,39 @@ build main.c.exe: C_EXECUTABLE_LINKER__main.2ec_Debug CMakeFiles/main.c.dir/main
   TARGET_IMPLIB = libmain.c.dll.a
   TARGET_PDB = main.c.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target test.c
+
+
+#############################################
+# Order-only phony target for test.c
+
+build cmake_object_order_depends_target_test.c: phony || CMakeFiles/test.c.dir
+
+build CMakeFiles/test.c.dir/test.c.obj: C_COMPILER__test.2ec_Debug F$:/C-code/demo/test.c || cmake_object_order_depends_target_test.c
+  DEP_FILE = CMakeFiles\test.c.dir\test.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu99
+  OBJECT_DIR = CMakeFiles\test.c.dir
+  OBJECT_FILE_DIR = CMakeFiles\test.c.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test.c
+
+
+#############################################
+# Link the executable test.c.exe
+
+build test.c.exe: C_EXECUTABLE_LINKER__test.2ec_Debug CMakeFiles/test.c.dir/test.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\test.c.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = test.c.exe
+  TARGET_IMPLIB = libtest.c.dll.a
+  TARGET_PDB = test.c.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -101,6 +134,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build main.c: phony main.c.exe
 
+build test.c: phony test.c.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -109,7 +144,7 @@ build main.c: phony main.c.exe
 #############################################
 # Folder: F:/C-code/demo/cmake-build-debug
 
-build all: phony main.c.exe
+build all: phony main.c.exe test.c.exe
 
 # =============================================================================
 # Built-in targets
