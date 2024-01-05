@@ -1,10 +1,10 @@
 //
 // Created by zhanxiaosong on 2023/12/25.
-// description: ä¸€äº›ç»å…¸çš„é€’å½’
+// description: Ò»Ğ©¾­µäµÄµİ¹é
 //
 
 #include <stdio.h>
-//æ±‚æ–æ³¢é‚£å¥‘æ•°åˆ—
+//Çóì³²¨ÄÇÆõÊıÁĞ
 //int fibonacci(int n){
 //    if(n == 0){
 //        return 0;
@@ -15,13 +15,13 @@
 //    return fibonacci(n - 1) + fibonacci(n - 2);
 //}
 
-//é¡ºåºè¾“å‡ºn
+//Ë³ĞòÊä³ön
 void shunxushuchu(int n) {
     if (n > 10) {
         shunxushuchu(n / 10);
     }
     printf("%d ", n % 10);
-    //å€’ç€è¾“å‡º
+    //µ¹×ÅÊä³ö
     //    while(n != 0){
     //        printf("%d", n % 10);
     //        n /= 10;
@@ -71,16 +71,16 @@ int main() {
     //
     //    //hanoi
     //    int m = 0;
-    //    printf("è¯·è¾“å…¥ç§»åŠ¨ç›˜å­çš„æ•°é‡ï¼š>\n");
+    //    printf("ÇëÊäÈëÒÆ¶¯ÅÌ×ÓµÄÊıÁ¿£º>\n");
     //    scanf_s("%d", &m);
     //    hanoi(m, 'A', 'B', 'C');
     //
 
-    //é’è›™è·³å°é˜¶é—®é¢˜
+    //ÇàÍÜÌøÌ¨½×ÎÊÌâ
     int stair_num;
-    printf("è¯·è¾“å…¥é’è›™è¦æ¡çš„å°é˜¶æ•°é‡\n");
+    printf("ÇëÊäÈëÇàÍÜÒªÌõµÄÌ¨½×ÊıÁ¿\n");
     scanf("%d", &stair_num);
-    printf("æ€»å…±æœ‰%dç§æ–¹å¼", dump(stair_num));
+    printf("×Ü¹²ÓĞ%dÖÖ·½Ê½", dump(stair_num));
 
 
     printf("%d", stair_num);

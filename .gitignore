@@ -1,2 +1,4 @@
 # Project exclude paths
-
+.idea
+shuzu/cmake-build-debug
+shuzu/CMakeLists.txt

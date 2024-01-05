@@ -39,9 +39,6 @@ int main() {
     p = &student;
 
     printf("%d", p++->age);
-
-
-
     // printf("id£º%d ",student1.id);
     // printf("ĞÕÃû£º%s ",student1.name);
     // printf("ĞÔ±ğ£º%c ",student1.sex);

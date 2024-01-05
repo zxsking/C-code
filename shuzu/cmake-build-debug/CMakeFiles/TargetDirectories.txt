@@ -1,7 +1,5 @@
-F:/C-code/shuzu/cmake-build-debug/CMakeFiles/1.yiweishuzu.c.dir
-F:/C-code/shuzu/cmake-build-debug/CMakeFiles/demo.c.dir
+F:/C-code/shuzu/cmake-build-debug/CMakeFiles/classic.c.dir
 F:/C-code/shuzu/cmake-build-debug/CMakeFiles/digui.c.dir
-F:/C-code/shuzu/cmake-build-debug/CMakeFiles/file.c.dir
 F:/C-code/shuzu/cmake-build-debug/CMakeFiles/point.c.dir
 F:/C-code/shuzu/cmake-build-debug/CMakeFiles/struct_demo.c.dir
 F:/C-code/shuzu/cmake-build-debug/CMakeFiles/test.c.dir

@@ -1,4 +1,4 @@
-ToolSet: 11.0 w64 (local)@D:\dev\CLion Nova\bin\mingw
+ToolSet: w64 9.0 (local)@D:\dev\CLion 2023.1\bin\mingw
 Options: 
 
-Options:-DCMAKE_MAKE_PROGRAM=D:/dev/CLion Nova/bin/ninja/win/x64/ninja.exe
+Options:-DCMAKE_MAKE_PROGRAM=D:/dev/CLion 2023.1/bin/ninja/win/x64/ninja.exe

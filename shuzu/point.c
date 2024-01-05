@@ -14,39 +14,39 @@ void maopao(int *nums,int n);
 
 int main()
 {
-    // int a = 10;
-    // int *q1 = &a;
-    // int * *q2 = &q1;
-    // int ** *q3 = &q2;
-    // int *** *q4 = &q3;
-    //
-    // printf("%d\n", &a);
-    //
-    // printf("-----------一级指针-----------\n");
-    // printf("%d\n", *q1); //指向的变量      //10
-    // printf("%d\n", q1); //指向的变量的地址         //@1
-    // printf("%d\n", &q1); //指针变量的地址       //@2
-    //
-    // printf("-----------二级指针-----------\n");
-    // printf("%d\n", **q2); //指向的指针变量所指向的变量        //10
-    // printf("%d\n", *q2); //指向的指针变量       //@1
-    // printf("%d\n", q2); //指向的指针变量的地址       //@2
-    // printf("%d\n", &q2); //二级指针变量的地址
-    //
-    // printf("-----------三级指针-----------\n");
-    // printf("***q3:%d\n", ***q3); //
-    // printf("**q3:%d\n", **q3); //
-    // printf("*q3:%d\n", *q3); //
-    // printf("q3:%d\n", q3); //
-    // printf("&q3:%d\n", &q3);//
-    //
-    // printf("-----------四级指针-----------\n");
-    // printf("%d\n", ****q4); //
-    // printf("%d\n", ***q4); //
-    // printf("%d\n", **q4); //
-    // printf("%d\n", *q4); //
-    // printf("%d\n", q4); //
-    // printf("%d\n", &q4);//
+    int a = 10;
+    int *q1 = &a;
+    int * *q2 = &q1;
+    int ** *q3 = &q2;
+    int *** *q4 = &q3;
+
+    printf("%pn", &a);
+
+    printf("-----------一级指针-----------\n");
+    printf("%d\n", *q1); //指向的变量      //10
+    printf("%#p\n", q1); //指向的变量的地址         //@1
+    printf("%p\n", &q1); //指针变量的地址       //@2
+
+    printf("-----------二级指针-----------\n");
+    printf("%d\n", **q2); //指向的指针变量所指向的变量        //10
+    printf("%p\n", *q2); //指向的指针变量       //@1
+    printf("%p\n", q2); //指向的指针变量的地址       //@2
+    printf("%p\n", &q2); //二级指针变量的地址
+
+    printf("-----------三级指针-----------\n");
+    printf("***q3:%d\n", ***q3); //
+    printf("**q3:%p\n", **q3); //
+    printf("*q3:%p\n", *q3); //
+    printf("q3:%p\n", q3); //
+    printf("&q3:%p\n", &q3);//
+
+    printf("-----------四级指针-----------\n");
+    printf("%d\n", ****q4); //
+    printf("%p\n", ***q4); //
+    printf("%p\n", **q4); //
+    printf("%p\n", *q4); //
+    printf("%p\n", q4); //
+    printf("%p\n", &q4);//
 
 
     // int a , b ;
@@ -79,25 +79,27 @@ int main()
  *
  */
 
-    int nums[] = {1, 9, 2, 8, 3, 7, 4, 6, 5};
-    // int* p;
-    // p = nums;
-    // p = &nums[0];
+    // int nums[] = {1, 9, 2, 8, 3, 7, 4, 6, 5};
+    // // int* p;
+    // // p = nums;
+    // // p = &nums[0];
+    //
+    // // int *p = nums;
+    // int *p = &nums[0];
+    //
+    //
+    // maopao(nums,(sizeof(nums)/sizeof(int)));
+    //
+    // for (int i = 0; i < sizeof(nums)/sizeof(int) ; ++i) {
+    //     // printf("%d ", *p++);
+    //     // printf("%d ", *(nums + i));
+    //     printf("%d ", nums[i]);
+    //
+    // }
 
-    // int *p = nums;
-    int *p = &nums[0];
 
 
-    maopao(nums,(sizeof(nums)/sizeof(int)));
-
-    for (int i = 0; i < sizeof(nums)/sizeof(int) ; ++i) {
-        // printf("%d ", *p++);
-        // printf("%d ", *(nums + i));
-        printf("%d ", nums[i]);
-
-    }
-
-
+    return 0;
 }
 
 void maopao(int *nums,int n)
