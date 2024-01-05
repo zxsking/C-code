@@ -6,7 +6,7 @@
 
 // #include <stdio.h>
 
-//程序8输出9*9乘法口诀
+//8.输出9*9乘法口诀
 // int main()
 // {
 //     int i = 0;
@@ -25,7 +25,7 @@
 
 
 
-//13打印水仙花数
+//13.打印水仙花数
 
 // #include<stdio.h>
 // int main()
@@ -208,19 +208,294 @@
 //21.猴子吃桃问题：猴子第一天摘下若干个桃子，当即吃了一半，还不瘾，又多吃了一个第二天早上又将剩下的桃子吃掉一半，又多吃了一个。
 // 以后每天早上都吃了前一天剩下的一半零一个。到第10天早上想再吃时，见只剩下一个桃子了。求第一天共摘了多少。
 
-#include<stdio.h>
-int main()
-{
-    int n = 1;
-
-    for (int day= 9;  1 <= day; --day)
-    {
-        n = (n + 1)*2;
-    }
-    printf("第一天摘了%d个", n);
-    return 0;
-}
+//#include<stdio.h>
+//int main()
+//{
+//    int n = 1;
+//
+//    for (int day= 9;  1 <= day; --day)
+//    {
+//        n = (n + 1)*2;
+//    }
+//    printf("第一天摘了%d个", n);
+//    return 0;
+//}
 
 
 //22.两个乒乓球队进行比赛，各出三人。甲队为a,b,c三人，乙队为x,y,z三人。已抽签决定比赛名单。有人向队员打听比赛的名单。
 // a说他不和x比，c说他不和x,z比，请编程序找出三队赛手的名单。
+
+//#include <stdio.h>
+//int main()
+//{
+//    char i,j,k;
+//    for (i = 'x'; i <= 'z'; ++i)
+//    {
+//        for (j = 'x'; j <= 'z'; ++j)
+//        {
+//            if (i != j)
+//            {
+//                for (k = 'x'; k <= 'z'; ++k)
+//                {
+//                    if ( i != k && j != k)
+//                    {
+//                        if (k != 'x' && k != 'z' && i != 'x')
+//                        {
+//                            printf("a--%c b--%c c--%c", i, j, k);
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//
+//    }
+//    return 0;
+//}
+
+
+//23.打印出下面菱形
+//   *
+//  ***
+// *****
+//*******
+// *****
+//  ***
+//   *
+
+//#include <stdio.h>
+//int main()
+//{
+//    int n = 3;
+//    for (int i = 1; i <= 4; ++i)
+//    {
+//        for (int j = 1; j <= 4-i; ++j)
+//        {
+//            printf(" ");
+//        }
+//        for (int j = 1; j <= 2*i-1 ; ++j)
+//        {
+//            printf("*");
+//        }
+//        printf("\n");
+//    }
+//
+//    for (int i = 1; i <= 3; ++i)
+//    {
+//        for (int j = 1; j <= i ; ++j)
+//        {
+//            printf(" ");
+//        }
+//
+//        for (int j = 2*(3-i)+1 ; j >= 1 ; --j)
+//        {
+//            printf("*");
+//        }
+//        printf("\n");
+//    }
+//
+//}
+
+//24.有一分数序列：2/1，3/2，5/3，8/5，13/8，21/13...求出这个数列的前20项之和。
+//#include<stdio.h>
+//int main()
+//{
+//    double y[21] = {0.0,2.0,};
+//    double x[21] = {0.0,1.0,};
+//    double sum = 0.0;
+//
+//    for (int i = 1; i <= 20; i++)
+//    {
+//        sum += y[i] / x[i];
+//        y[i + 1] = y[i] + x[i];
+//        x[i + 1] = y[i];
+//        printf("%f,%f\n", y[i + 1], x[i + 1]);
+//    }
+//    printf("%.7f", sum);
+//    return 0;
+//}
+
+
+
+//25.求1+2!+3!+...+20!的和。
+//#include <stdio.h>
+//int main()
+//{
+//    long long int num = 0;
+//    long long int product = 1;
+//    for (int i = 1; i <= 20; ++i)
+//    {
+//        //简便方法
+//        product = product * i;
+//        num += product;
+//        //我想出的笨方法 ...也只有我想的出来...
+////        for (int j = i; j > 0 ; --j)
+////        {
+////            product *=j;
+////            if(j == 1){
+////                printf("%lld", product);
+////                num += product;
+////                product = 1;
+////            }
+////        }
+////        printf("\n");
+//    }
+//    printf("%lld", num);
+//    return 0;
+//}
+
+
+//26.利用递归方法求5!。
+
+//#include <stdio.h>
+//
+//int product(int i)
+//{
+//    if(i == 1 ){
+//        return 1;
+//    }
+//    return product(i-1) * i;
+//}
+//int main(){
+//    printf("%d",product(3));
+//    return 0;
+//}
+
+//27.利用递归函数调用方式，将所输入的5个字符，以相反顺序打印出来。
+
+//#include<stdio.h>
+//
+//void print(char *str,int i){
+//    if (str[i] != 0)
+//    {
+//        print(str, i + 1);
+//        printf("%c", str[i]);
+//    }
+//
+//}
+//
+//int main()
+//{
+//    char str[6];
+//    scanf("%s", str);
+//    print(str,0);
+//}
+
+//28.有5个人坐在一起，问第五个人多少岁？他说比第4个人大2岁。问第4个人岁数，他说比第3个人大2岁。
+// 问第三个人，又说比第2人大两岁。问第2个人，说比第一个人大两岁。最后问第一个人，他说是10岁。请问第五个人多大？
+//#include <stdio.h>
+//
+//int age(int n){
+//    int c;
+//    if(n == 1){
+//        c = 10;
+//    }else{
+//        c = age(n - 1) + 2;
+//    }
+//    return c;
+//}
+//
+//int main()
+//{
+//    //1.不递归
+////    int a,b,c,d,e;
+////    a = 10;
+////    b = a+2;
+////    c = b+2;
+////    d = c+2;
+////    e = d+2;
+////    printf("%d", e);
+//
+//    //2.递归
+//    printf("%d", age(5));
+//    return 0;
+//}
+
+
+//29.给一个不多于5位的正整数，要求：一、求它是几位数，二、逆序打印出各位数字。
+//TODO 分离个十百千万位
+//#include<stdio.h>
+//int main()
+//{
+//    int a,b,c,d,e,num; //个，十，百，千，万，正整数，
+//
+//    printf("请输出一个不多于五位的正整数:");
+//    scanf("%d", &num);
+//
+//    a = num/10000;
+//    b = num%10000/1000;
+//    c = num%1000/100;
+//    d = num%100/10;
+//    e = num%10;
+//
+//    if (a != 0){
+//        printf("num为5位数,逆序打印：%d,%d,%d,%d,%d", e, d, c, b, a);
+//    } else if (b != 0){
+//        printf("num为4位数,逆序打印：%d,%d,%d,%d", e, d, c, b);
+//    } else if (c != 0){
+//        printf("num为3位数,逆序打印：%d,%d,%d", e, d, c);
+//    } else if (d != 0){
+//        printf("num为2位数,逆序打印：%d,%d", e,d);
+//    } else if (e != 0){
+//        printf("num为1位数,逆序打印：%d", e);
+//    }
+//    return 0;
+//}
+
+//30.一个5位数，判断它是不是回文数。即12321是回文数，个位与万位相同，十位与千位相同。
+//#include<stdio.h>
+//int main()
+//{
+//    int a,b,c,d,e,num; //个，十，百，千，万，正整数，
+//
+//    printf("请输出一个五位数:");
+//    scanf("%d", &num);
+//
+//    a = num/10000;
+//    b = num%10000/1000;
+//    c = num%1000/100;
+//    d = num%100/10;
+//    e = num%10;
+//
+//    if (a == e && b == d){
+//        printf("%d是一个回文数", num);
+//    }else{
+//        printf("这不是一个回文数");
+//    }
+//
+//}
+
+
+
+//31.请输入星期几的第一个字母来判断一下是星期几，如果第一个字母一样，则继续判断第二个字母。
+//TODO 现在不想写 等心情好的时候写
+//#include <stdio.h>
+//int main(){
+//
+//}
+
+
+
+//32.删除一个字符串中的指定字母，如：字符串 "aca"，删除其中的 a 字母。
+
+
+//33.判断一个数字是否为质数。
+//#include <stdio.h>
+//int main()
+//{
+//    int n,i;
+//    scanf("%d", &n);
+//    for (i = 2; i < n; ++i)
+//    {
+//        if (n % i == 0)
+//            break;
+//    }
+//    if(i == n){
+//        printf("该数为素数");
+//    }else{
+//        printf("该数不为素数");
+//    }
+//}
+
+
+
+
