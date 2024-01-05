@@ -1,7 +1,0 @@
-F:/C-code/shuzu/cmake-build-debug/CMakeFiles/classic.c.dir
-F:/C-code/shuzu/cmake-build-debug/CMakeFiles/digui.c.dir
-F:/C-code/shuzu/cmake-build-debug/CMakeFiles/point.c.dir
-F:/C-code/shuzu/cmake-build-debug/CMakeFiles/struct_demo.c.dir
-F:/C-code/shuzu/cmake-build-debug/CMakeFiles/test.c.dir
-F:/C-code/shuzu/cmake-build-debug/CMakeFiles/edit_cache.dir
-F:/C-code/shuzu/cmake-build-debug/CMakeFiles/rebuild_cache.dir
