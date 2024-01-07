@@ -494,8 +494,55 @@
 //    }else{
 //        printf("该数不为素数");
 //    }
+//        return 0;
+//}
+
+
+//39.有一个已经排好序的数组。现输入一个数，要求按原来的规律将它插入数组中。
+#include <stdio.h>
+int main()
+{
+
+}
+
+
+
+
+
+//40.将一个数组逆序输出。
+//#include<stdio.h>
+//int main(){
+//    int nums[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+//    //1.倒着输出
+////    for (int i = sizeof(nums)/sizeof(int)-1; i >= 0 ; --i)
+////    {
+////        printf("%d", nums[i]);
+////    }
+//    //2.先换位置在输出
+//    int temp;
+//    int size = sizeof(nums)/sizeof(int);
+//    for (int i = 0; i < size/2; ++i)
+//    {
+//        temp = nums[i];
+//        nums[i] = nums[size - i - 1];
+//        nums[size - i - 1] = temp;
+//    }
+//    for (int i = 0; i < size; ++i)
+//    {
+//        printf("%d", nums[i]);
+//    }
+//    return 0;
 //}
 
 
 
+
+
+
+
+
+
+//80.海滩上有一堆桃子，五只猴子来分。第一只猴子把这堆桃子平均分为五份，多了一个，这只 猴子把多的一个扔入海中，拿走了一份。
+// 第二只猴子把剩下的桃子又平均分成五份，又多了一个，它同样把多的一个扔入海中，
+// 拿走了一份，第三、第四、第五只猴子都是这样做的， 问海滩上原来最少有多少个桃子？
 
