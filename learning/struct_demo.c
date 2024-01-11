@@ -12,7 +12,7 @@ typedef struct          //声明一个结构体类型 struct Date
 
 struct Student //声明一个结构体类型 struct Student
 {
-    int id; //学号为整型      4字节
+    int id; //学号为整型         4字节
     char name[20]; //名字为字符串    20字节
     char sex; //性别为字符型    1字节
     int age; //年龄为整型     4字节
