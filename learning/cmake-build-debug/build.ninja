@@ -41,6 +41,39 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = F$:/C-code/learning/cmake-build-debug/
 # =============================================================================
+# Object build statements for EXECUTABLE target 2.2.c
+
+
+#############################################
+# Order-only phony target for 2.2.c
+
+build cmake_object_order_depends_target_2.2.c: phony || CMakeFiles/2.2.c.dir
+
+build CMakeFiles/2.2.c.dir/2.2.c.obj: C_COMPILER__2.2e2.2ec_Debug F$:/C-code/learning/2.2.c || cmake_object_order_depends_target_2.2.c
+  DEP_FILE = CMakeFiles\2.2.c.dir\2.2.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu99
+  OBJECT_DIR = CMakeFiles\2.2.c.dir
+  OBJECT_FILE_DIR = CMakeFiles\2.2.c.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 2.2.c
+
+
+#############################################
+# Link the executable 2.2.c.exe
+
+build 2.2.c.exe: C_EXECUTABLE_LINKER__2.2e2.2ec_Debug CMakeFiles/2.2.c.dir/2.2.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\2.2.c.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = 2.2.c.exe
+  TARGET_IMPLIB = lib2.2.c.dll.a
+  TARGET_PDB = 2.2.c.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target classic.c
 
 
@@ -297,6 +330,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build 2.2.c: phony 2.2.c.exe
+
 build classic.c: phony classic.c.exe
 
 build digui.c: phony digui.c.exe
@@ -319,7 +354,7 @@ build test.c: phony test.c.exe
 #############################################
 # Folder: F:/C-code/learning/cmake-build-debug
 
-build all: phony classic.c.exe digui.c.exe example.c.exe point.c.exe string.c.exe struct_demo.c.exe test.c.exe
+build all: phony 2.2.c.exe classic.c.exe digui.c.exe example.c.exe point.c.exe string.c.exe struct_demo.c.exe test.c.exe
 
 # =============================================================================
 # Built-in targets
