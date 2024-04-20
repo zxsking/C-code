@@ -168,8 +168,8 @@ int r_b_search(const int a[], int left, int right, int key)
 //主函数
 int main()
 {
-        int a[] = {9,7,5,3,1,2,4,6,8,0};
-        int len = 10;
+//        int a[] = {9,7,5,3,1,2,4,6,8,0};
+//        int len = 10;
 
     //排序
 //    bubble_sort(a, len);      //冒泡
@@ -179,8 +179,8 @@ int main()
 
 
     //查找
-    int num  = 2;
-    int index;
+//    int num  = 2;
+//    int index;
 //    index = sequential_search(a, len, num);       //顺序
 //    index = binary_search(a, len, num);           //二分
 //    index = r_b_search(a, 0, len - 1, num);       //递归二分
@@ -189,16 +189,9 @@ int main()
 //    {
 //        printf("%d的下标为%d 是第%d个数", num, index, index + 1);
 //    }
+
+
+    printf("%d", 3.2&&1.2);
+
     return 0;
-
 }
-
-
-
-
-
-
-
-
-
-

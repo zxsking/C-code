@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verb Form Practice</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; /* 设置通用字体 */
+            font-size: 18px; /* 增加基本字体大小 */
+        }
+
+        .container {
+            width: 50%;
+            margin: 50px auto;
+        }
+
+        .current-verb {
+            font-size: 20px; /* 当前动词的字体大小 */
+            margin-bottom: 10px; /* 增加与输入框的间距 */
+            color: #333; /* 字体颜色 */
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .error-log {
+            margin-top: 20px;
+        }
+
+        .el-input__inner, .el-button { /* Element UI 输入框和按钮样式 */
+            font-size: 16px; /* 输入框和按钮的字体大小 */
+        }
+    </style>
+
+</head>
+<body>
+<div id="app" class="container">
+    <el-row type="flex" justify="center">
+        <el-col :span="24">
+            <h1>动词后接形式练习</h1>
+            <el-form @submit.native.prevent="submitAnswer">
+                <el-form-item label="当前单词">
+                    <!-- 显示当前动词 -->
+                    <div class="current-verb">{{ currentVerb }}</div>
+                    <el-input v-model="userInput" placeholder="请输入正确的形式('to do' or 'doing' or both two)"
+                              autofocus></el-input>
+                </el-form-item>
+
+                <el-button type="primary" @click="submitAnswer">Submit</el-button>
+                <div v-if="feedback" :class="{ incorrect: isIncorrect }">{{ feedback }}</div>
+            </el-form>
+            <div class="error-log">
+                <el-table :data="errorLog" style="width: 100%">
+                    <el-table-column prop="verb" label="动词"></el-table-column>
+                    <el-table-column prop="userAnswer" label="你的答案"></el-table-column>
+                    <el-table-column prop="correctAnswer" label="正确答案"></el-table-column>
+                </el-table>
+            </div>
+        </el-col>
+    </el-row>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                currentVerbIndex: 0,
+                userInput: '',
+                feedback: '',
+                isIncorrect: false,
+                errorLog: [],
+                verbMap: [],
+                currentVerb: ''
+            };
+        },
+        methods: {
+            initVerbMap() {
+                const toDoVerbs = ["wish", "want", "agree", "arrange", "ask", "attempt", "choose", "decide", "expect", "fail",
+                    "help", "hope", "learn", "manage", "offer", "pretend", "promise", "seem", "afford", "aim", "appear", "beg",
+                    "begin", "call", "care", "desire", "determine", "fancy", "get", "hate", "intend", "like", "love", "mean", "omit",
+                    "prepare", "prove", "refuse", "start", "understand", "volunteer", "demand", "fear", "plan", "happen", "hesitate",
+                    "struggle", "long", "can not wait"];
+
+
+                const doingVerbs = ["admit", "allow", "advise", "appreciate", "consider", "dislike", "encourage", "finish",
+                    "escape", "feel like", "forbid", "forgive", "give up", "can not help", "imagine",
+                    "involve", "mind", "miss", "put off", "can not stand", "suggest"];
+                const bothFormsVerbs = ["practice", "enjoy", "stop", "forget", "avoid", "deny", "try", "mean", "need",
+                    "require", "regret", "quit", "remember"];
+                this.verbMap = [...toDoVerbs.map(verb => ({verb, phrase: "to do"})),
+                    ...doingVerbs.map(verb => ({verb, phrase: "doing"})),
+                    ...bothFormsVerbs.map(verb => ({verb, phrase: "to do / doing"}))];
+            },
+            shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+            },
+            initQuiz() {
+                this.initVerbMap();
+                this.shuffleArray(this.verbMap);
+                this.currentVerbIndex = 0;
+                this.updateCurrentVerb(); // 初始化时设置第一个动词
+                this.userInput = '';
+                this.feedback = '';
+                this.errorLog = [];
+            },
+
+            // 初始化和更新当前动词
+            updateCurrentVerb() {
+                this.currentVerb = this.verbMap[this.currentVerbIndex].verb;
+            },
+            submitAnswer() {
+                const correctAnswer = this.verbMap[this.currentVerbIndex].phrase;
+                if (this.userInput.trim() === correctAnswer) {
+                    this.feedback = "Correct!";
+                    this.isIncorrect = false;
+                    this.currentVerbIndex++;
+                    if (this.currentVerbIndex >= this.verbMap.length) {
+                        alert("All verbs reviewed. Shuffling and restarting.");
+                        // this.initQuiz();
+                    } else {
+                        this.updateCurrentVerb(); // 更新下一个动词
+                    }
+                } else if (this.userInput.trim() === '') {
+
+                } else {
+                    this.feedback = `Incorrect. Correct answer is: ${correctAnswer}`;
+                    this.isIncorrect = true;
+                    this.errorLog.push({
+                        verb: this.verbMap[this.currentVerbIndex].verb,
+                        userAnswer: this.userInput,
+                        correctAnswer: correctAnswer
+                    });
+                }
+                this.userInput = '';
+            },
+        },
+        mounted() {
+            this.initQuiz();
+        }
+    });
+</script>
+</body>
+</html>

@@ -138,3 +138,34 @@
 //68.约瑟夫生者死者小游戏
 
 //69.五人分鱼
+
+
+#include <stdio.h>
+#include <string.h>
+
+struct Student
+{
+    int a;
+    char *b;
+} c, *p = &c;
+
+int main()
+{
+//    int *p;
+//    int *q;
+//    int a[5][5] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 10, 2, 3, 4, 12, 1, 213, 123, 123};
+//
+//    p = &a[0][0];
+//    q = ;
+//
+//    *p = 4;
+//    printf("%d", *p);
+//    *q = 5;
+//
+//    printf("%d", *q);
+
+strlen
+
+    printf("%d", sizeof(p));
+
+}

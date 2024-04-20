@@ -7,6 +7,34 @@
 #include <string.h>
 #include <errno.h>
 //为什么使用文件 用来存储数据 数据持久化
+int main()
+{
+//    FILE *pf = fopen("text.txt", "r");
+    FILE *pf = fopen("text.txt", "w+");
+    if (pf == NULL)
+    {
+//        printf("%s", strerror(errno));
+        perror("fopen");
+        return 1;
+    }
+
+
+    fputs("zhanxiaosong", pf);
+
+    char ch;
+    while ((ch = fgetc(pf)) != EOF)
+    {
+        printf("%c", ch);
+    }
+
+//    char str[50];
+//    fgets(str, 50, pf);
+//    printf("%s", str);
+
+
+
+    return 0;
+}
 
 
 //int main()
@@ -142,21 +170,21 @@ struct S
 //将格式参数转化为字符串
 
 
-int main()
-{
-//    struct S s = {"avery",20,20.5f};
-//    char str[50];
-//    sprintf(str, "%s %d %f", s.arr, s.age, s.score);
-
-//    printf("%s", str);
-
-    struct S t ={0};
-    char ss[20];
-    sscanf("zhanxiaosong 20 2.22f", "%s %d %f", t.arr, &(t.age), &(t.score));
-    printf("%s %d %f", t.arr, t.age, t.score);
-
-    return 0;
-}
+//int main()
+//{
+////    struct S s = {"avery",20,20.5f};
+////    char str[50];
+////    sprintf(str, "%s %d %f", s.arr, s.age, s.score);
+//
+////    printf("%s", str);
+//
+//    struct S t ={0};
+//    char ss[20];
+//    sscanf("zhanxiaosong 20 2.22f", "%s %d %f", t.arr, &(t.age), &(t.score));
+//    printf("%s %d %f", t.arr, t.age, t.score);
+//
+//    return 0;
+//}
 
 
 

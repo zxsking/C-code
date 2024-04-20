@@ -107,6 +107,39 @@ build chapter_1.c.exe: C_EXECUTABLE_LINKER__chapter_1.2ec_Debug CMakeFiles/chapt
   TARGET_PDB = chapter_1.c.exe.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target chapter_10.c
+
+
+#############################################
+# Order-only phony target for chapter_10.c
+
+build cmake_object_order_depends_target_chapter_10.c: phony || CMakeFiles/chapter_10.c.dir
+
+build CMakeFiles/chapter_10.c.dir/chapter_10.c.obj: C_COMPILER__chapter_10.2ec_Debug F$:/C-code/learning/chapter_10.c || cmake_object_order_depends_target_chapter_10.c
+  DEP_FILE = CMakeFiles\chapter_10.c.dir\chapter_10.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu99
+  OBJECT_DIR = CMakeFiles\chapter_10.c.dir
+  OBJECT_FILE_DIR = CMakeFiles\chapter_10.c.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target chapter_10.c
+
+
+#############################################
+# Link the executable chapter_10.c.exe
+
+build chapter_10.c.exe: C_EXECUTABLE_LINKER__chapter_10.2ec_Debug CMakeFiles/chapter_10.c.dir/chapter_10.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\chapter_10.c.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = chapter_10.c.exe
+  TARGET_IMPLIB = libchapter_10.c.dll.a
+  TARGET_PDB = chapter_10.c.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target chapter_2.c
 
 
@@ -602,6 +635,39 @@ build mostclassicial.c.exe: C_EXECUTABLE_LINKER__mostclassicial.2ec_Debug CMakeF
   TARGET_PDB = mostclassicial.c.exe.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target new.c
+
+
+#############################################
+# Order-only phony target for new.c
+
+build cmake_object_order_depends_target_new.c: phony || CMakeFiles/new.c.dir
+
+build CMakeFiles/new.c.dir/new.c.obj: C_COMPILER__new.2ec_Debug F$:/C-code/learning/new.c || cmake_object_order_depends_target_new.c
+  DEP_FILE = CMakeFiles\new.c.dir\new.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu99
+  OBJECT_DIR = CMakeFiles\new.c.dir
+  OBJECT_FILE_DIR = CMakeFiles\new.c.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target new.c
+
+
+#############################################
+# Link the executable new.c.exe
+
+build new.c.exe: C_EXECUTABLE_LINKER__new.2ec_Debug CMakeFiles/new.c.dir/new.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\new.c.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = new.c.exe
+  TARGET_IMPLIB = libnew.c.dll.a
+  TARGET_PDB = new.c.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target point.c
 
 
@@ -635,37 +701,37 @@ build point.c.exe: C_EXECUTABLE_LINKER__point.2ec_Debug CMakeFiles/point.c.dir/p
   TARGET_PDB = point.c.exe.dbg
 
 # =============================================================================
-# Object build statements for EXECUTABLE target red_book.c
+# Object build statements for EXECUTABLE target qiangge.c
 
 
 #############################################
-# Order-only phony target for red_book.c
+# Order-only phony target for qiangge.c
 
-build cmake_object_order_depends_target_red_book.c: phony || CMakeFiles/red_book.c.dir
+build cmake_object_order_depends_target_qiangge.c: phony || CMakeFiles/qiangge.c.dir
 
-build CMakeFiles/red_book.c.dir/red_book.c.obj: C_COMPILER__red_book.2ec_Debug F$:/C-code/learning/red_book.c || cmake_object_order_depends_target_red_book.c
-  DEP_FILE = CMakeFiles\red_book.c.dir\red_book.c.obj.d
+build CMakeFiles/qiangge.c.dir/qiangge.c.obj: C_COMPILER__qiangge.2ec_Debug F$:/C-code/learning/qiangge.c || cmake_object_order_depends_target_qiangge.c
+  DEP_FILE = CMakeFiles\qiangge.c.dir\qiangge.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu99
-  OBJECT_DIR = CMakeFiles\red_book.c.dir
-  OBJECT_FILE_DIR = CMakeFiles\red_book.c.dir
+  OBJECT_DIR = CMakeFiles\qiangge.c.dir
+  OBJECT_FILE_DIR = CMakeFiles\qiangge.c.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target red_book.c
+# Link build statements for EXECUTABLE target qiangge.c
 
 
 #############################################
-# Link the executable red_book.c.exe
+# Link the executable qiangge.c.exe
 
-build red_book.c.exe: C_EXECUTABLE_LINKER__red_book.2ec_Debug CMakeFiles/red_book.c.dir/red_book.c.obj
+build qiangge.c.exe: C_EXECUTABLE_LINKER__qiangge.2ec_Debug CMakeFiles/qiangge.c.dir/qiangge.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\red_book.c.dir
+  OBJECT_DIR = CMakeFiles\qiangge.c.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = red_book.c.exe
-  TARGET_IMPLIB = libred_book.c.dll.a
-  TARGET_PDB = red_book.c.exe.dbg
+  TARGET_FILE = qiangge.c.exe
+  TARGET_IMPLIB = libqiangge.c.dll.a
+  TARGET_PDB = qiangge.c.exe.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target sort_search.c
@@ -700,6 +766,39 @@ build sort_search.c.exe: C_EXECUTABLE_LINKER__sort_search.2ec_Debug CMakeFiles/s
   TARGET_IMPLIB = libsort_search.c.dll.a
   TARGET_PDB = sort_search.c.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target suxiaohongbook.c
+
+
+#############################################
+# Order-only phony target for suxiaohongbook.c
+
+build cmake_object_order_depends_target_suxiaohongbook.c: phony || CMakeFiles/suxiaohongbook.c.dir
+
+build CMakeFiles/suxiaohongbook.c.dir/suxiaohongbook.c.obj: C_COMPILER__suxiaohongbook.2ec_Debug F$:/C-code/learning/suxiaohongbook.c || cmake_object_order_depends_target_suxiaohongbook.c
+  DEP_FILE = CMakeFiles\suxiaohongbook.c.dir\suxiaohongbook.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu99
+  OBJECT_DIR = CMakeFiles\suxiaohongbook.c.dir
+  OBJECT_FILE_DIR = CMakeFiles\suxiaohongbook.c.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target suxiaohongbook.c
+
+
+#############################################
+# Link the executable suxiaohongbook.c.exe
+
+build suxiaohongbook.c.exe: C_EXECUTABLE_LINKER__suxiaohongbook.2ec_Debug CMakeFiles/suxiaohongbook.c.dir/suxiaohongbook.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\suxiaohongbook.c.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = suxiaohongbook.c.exe
+  TARGET_IMPLIB = libsuxiaohongbook.c.dll.a
+  TARGET_PDB = suxiaohongbook.c.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -729,6 +828,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 build LinkedList.c: phony LinkedList.c.exe
 
 build chapter_1.c: phony chapter_1.c.exe
+
+build chapter_10.c: phony chapter_10.c.exe
 
 build chapter_2.c: phony chapter_2.c.exe
 
@@ -760,11 +861,15 @@ build hbnu.c: phony hbnu.c.exe
 
 build mostclassicial.c: phony mostclassicial.c.exe
 
+build new.c: phony new.c.exe
+
 build point.c: phony point.c.exe
 
-build red_book.c: phony red_book.c.exe
+build qiangge.c: phony qiangge.c.exe
 
 build sort_search.c: phony sort_search.c.exe
+
+build suxiaohongbook.c: phony suxiaohongbook.c.exe
 
 # =============================================================================
 # Folder targets.
@@ -774,7 +879,7 @@ build sort_search.c: phony sort_search.c.exe
 #############################################
 # Folder: F:/C-code/learning/cmake-build-debug
 
-build all: phony LinkedList.c.exe chapter_1.c.exe chapter_2.c.exe chapter_3.c.exe chapter_4.c.exe chapter_5.c.exe chapter_6.c.exe chapter_7.c.exe chapter_8.c.exe chapter_9.c.exe classic.c.exe english_practice.c.exe example.c.exe file.c.exe green_book.c.exe hbnu.c.exe mostclassicial.c.exe point.c.exe red_book.c.exe sort_search.c.exe
+build all: phony LinkedList.c.exe chapter_1.c.exe chapter_10.c.exe chapter_2.c.exe chapter_3.c.exe chapter_4.c.exe chapter_5.c.exe chapter_6.c.exe chapter_7.c.exe chapter_8.c.exe chapter_9.c.exe classic.c.exe english_practice.c.exe example.c.exe file.c.exe green_book.c.exe hbnu.c.exe mostclassicial.c.exe new.c.exe point.c.exe qiangge.c.exe sort_search.c.exe suxiaohongbook.c.exe
 
 # =============================================================================
 # Built-in targets

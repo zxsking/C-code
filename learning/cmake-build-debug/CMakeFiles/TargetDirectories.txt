@@ -1,5 +1,6 @@
 F:/C-code/learning/cmake-build-debug/CMakeFiles/LinkedList.c.dir
 F:/C-code/learning/cmake-build-debug/CMakeFiles/chapter_1.c.dir
+F:/C-code/learning/cmake-build-debug/CMakeFiles/chapter_10.c.dir
 F:/C-code/learning/cmake-build-debug/CMakeFiles/chapter_2.c.dir
 F:/C-code/learning/cmake-build-debug/CMakeFiles/chapter_3.c.dir
 F:/C-code/learning/cmake-build-debug/CMakeFiles/chapter_4.c.dir
@@ -15,8 +16,10 @@ F:/C-code/learning/cmake-build-debug/CMakeFiles/file.c.dir
 F:/C-code/learning/cmake-build-debug/CMakeFiles/green_book.c.dir
 F:/C-code/learning/cmake-build-debug/CMakeFiles/hbnu.c.dir
 F:/C-code/learning/cmake-build-debug/CMakeFiles/mostclassicial.c.dir
+F:/C-code/learning/cmake-build-debug/CMakeFiles/new.c.dir
 F:/C-code/learning/cmake-build-debug/CMakeFiles/point.c.dir
-F:/C-code/learning/cmake-build-debug/CMakeFiles/red_book.c.dir
+F:/C-code/learning/cmake-build-debug/CMakeFiles/qiangge.c.dir
 F:/C-code/learning/cmake-build-debug/CMakeFiles/sort_search.c.dir
+F:/C-code/learning/cmake-build-debug/CMakeFiles/suxiaohongbook.c.dir
 F:/C-code/learning/cmake-build-debug/CMakeFiles/edit_cache.dir
 F:/C-code/learning/cmake-build-debug/CMakeFiles/rebuild_cache.dir

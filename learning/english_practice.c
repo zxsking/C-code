@@ -177,7 +177,7 @@ int main() {
 
 
     strcpy(verbMap[50].verb, "remember");
-    strcpy(verbMap[50].phrase, "doing");
+    strcpy(verbMap[50].phrase, "to do / doing");
 
 
 
@@ -186,6 +186,7 @@ int main() {
 //    for (int i = 0; i < MAX_VERB_COUNT; i++) {
 //        printf("动词：%s，后接词语：%s\n", verbMap[i].verb, verbMap[i].phrase);
 //    }
+
 
 
     for (int i = 0; i < 50; i++) {
@@ -200,28 +201,11 @@ int main() {
         } else {
             printf("   TRUE\n\n");
         }
+
     }
 
-    // 随机生成一个动词
-    // srand(time(NULL));
-    // int randomIndex = rand() % MAX_VERB_COUNT;
-    // char* verb = verbMap[randomIndex].verb;
 
-    // 输出动词
-    // printf("动词：%s\n", verb);
-
-    // 输出动词后接的词语
-    // printf("后接的词语：%s\n", verbMap[randomIndex].phrase);
-
-    // 检测是否正确
-    // if (strcmp(verbMap[randomIndex].phrase, "to do") == 0) {
-    //     printf("正确，该动词后接 \"to do\"\n");
-    // } else {
-    //     printf("错误，该动词后接 \"doing\"\n");
-    // }
-
-
-//    afford arrange beg care demand   fear help plan prepare happen hesitate struggle  to do
+//
 
 
     return 0;

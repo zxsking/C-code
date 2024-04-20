@@ -265,20 +265,20 @@
 //#include <stdio.h>
 //int main()
 //{
-//    int num;
+//    int num,i;
 //    scanf("%d", &num);
 //    printf("%d=", num);
 //    for (int i = 2; i <= num; ++i)
 //    {
+//        while (num % i == 0 && num != i)
+//        {
+//            printf("%d*", i);
+//            num = num / i;
+//        }
 //        if (i == num)
 //        {
 //            printf("%d", i);
 //            break;
-//        }
-//        while (num % i == 0)
-//        {
-//            printf("%d*", i);
-//            num = num / i;
 //        }
 //    }
 //    return 0;
@@ -348,29 +348,29 @@
 //}
 
 //17.输入一行字符，分别统计出其中英文字母、空格、数字和其它字符的个数。
-// #include<stdio.h>
-// #include<string.h>
-// int main() {
-//     int letter=0,space=0,num=0,others = 0;
-//     char str[50];
-//     gets(str);
-//     for (int i = 0; i < strlen(str); ++i) {
-//         if(str[i] == ' ') {
-//             space++;
-//         }else if(str[i]>='1' &&str[i] <='9') {
-//             num++;
-//         }else if((str[i]>='a' &&str[i]<='z')||(str[i]>='A'&&str[i]<='Z')) {
-//             letter++;
-//         }else {
-//             others++;
-//         }
-//     }
-//     printf("space:%d\n", space);
-//     printf("letter:%d\n", letter);
-//     printf("num:%d\n", num);
-//     printf("others:%d\n", others);
-//     return 0;
-// }
+//#include<stdio.h>
+//int main() {
+//    int letter=0,space=0,num=0,others = 0;
+//    int c;
+//
+//    while ((c = getchar()) != '\n')
+//    {
+//        if(c == ' ') {
+//            space++;
+//        }else if(c>='1' &&c <='9') {
+//            num++;
+//        }else if((c>='a' &&c<='z')||(c>='A'&&c<='Z')) {
+//            letter++;
+//        }else {
+//            others++;
+//        }
+//    }
+//    printf("space:%d\n", space);
+//    printf("letter:%d\n", letter);
+//    printf("num:%d\n", num);
+//    printf("others:%d\n", others);
+//    return 0;
+//}
 
 
 //18.求s=a+aa+aaa+aaaa+aa...a的值，其中a是一个数字。例如2+22+222+2222+22222(此时共有5个数相加)，几个数相加有键盘控制。
@@ -489,38 +489,38 @@
 // *****
 //  ***
 //   *
-
-//#include <stdio.h>
-//int main()
-//{
-//    int i,j;
-//    for (i = 1; i <= 4; ++i)        //前四层
-//    {
-//        for (j = 1; j <= 4 - i; ++j)    //每层输出4-i个空格
-//        {
-//            printf(" ");
-//        }
-//        for (j = 1; j <= 2 * i - 1; ++j)    //每层输出(2*i-1)个'*'
-//        {
-//            printf("*");
-//        }
-//        printf("\n");   //每层最后的换行
-//    }
-//    for (i = 3; i >= 1 ; --i)   //后三层 这里i为3先当将最前面三层倒着输出
-//    {
-//        for (j = 1; j <= 4 - i; ++j)        //每层输出4-i个空格
-//        {
-//            printf(" ");
-//        }
-//        for (j = 1; j <= 2 * i - 1; ++j)    //每层输出(2*i-1)个'*'
-//        {
-//            printf("*");
-//        }
-//        printf("\n");   //每层最后换行
-//    }
-//    return 0;
-//
-//}
+    //
+    //#include <stdio.h>
+    //int main()
+    //{
+    //    int i,j;
+    //    for (i = 1; i <= 4; ++i)        //前四层
+    //    {
+    //        for (j = 1; j <= 4 - i; ++j)    //每层输出4-i个空格
+    //        {
+    //            printf(" ");
+    //        }
+    //        for (j = 1; j <= 2 * i - 1; ++j)    //每层输出(2*i-1)个'*'
+    //        {
+    //            printf("*");
+    //        }
+    //        printf("\n");   //每层最后的换行
+    //    }
+    //    for (i = 3; i >= 1 ; --i)   //后三层 这里i为3先当将最前面三层倒着输出
+    //    {
+    //        for (j = 1; j <= 4 - i; ++j)        //每层输出4-i个空格
+    //        {
+    //            printf(" ");
+    //        }
+    //        for (j = 1; j <= 2 * i - 1; ++j)    //每层输出(2*i-1)个'*'
+    //        {
+    //            printf("*");
+    //        }
+    //        printf("\n");   //每层最后换行
+    //    }
+    //    return 0;
+    //
+    //}
 
 
 //24.有一分数序列：2/1，3/2，5/3，8/5，13/8，21/13...求出这个数列的前20项之和。
@@ -834,7 +834,6 @@
 //            printf("%3d", i);
 //        }
 //    }
-//
 //    return 0;
 //}
 
@@ -888,14 +887,32 @@
 
 //39.有一个已经排好序的数组。现输入一个数，要求按原来的规律将它插入数组中。
 //#include <stdio.h>
-//TODO 要考虑升序降序，还要考虑数组中已有元素大小
+//
 //int main()
 //{
+//    int a[5] = {1, 4, 6, 8};
+//    int n, num, i;
+//    n = 4;
+//    scanf("%d", &num);
 //
+//    for (i = n - 1; i >= 0; --i)
+//    {
+//        if (num > a[i])
+//        {
+//            a[i + 1] = num;
+//            break;
+//        }
+//        a[i + 1] = a[i];
+//    }
+//    n++;
+//
+//
+//    for (i = 0; i < n; ++i)
+//    {
+//        printf("%d", a[i]);
+//    }
+//    return 0;
 //}
-
-
-
 
 
 //40.将一个数组逆序输出。
@@ -913,6 +930,7 @@
 //}
 
 
+/**
 //41.学习定义静态变量的方法
 //略
 //42.学习使用auto定义变量的用法。
@@ -951,7 +969,7 @@
 // 略
 //60.画图，综合例子2。（在TC中实现）。
 // 略
-
+*/
 
 //61.杨辉三角形
 //#include <stdio.h>
@@ -992,7 +1010,7 @@
 //    printf("\n");
 //}
 
-
+/**
 //62.学习putpixel画点，（在TC中实现）。
 // 略
 //63.画椭圆ellipse（在TC中实现）。
@@ -1001,7 +1019,7 @@
 // 略
 //65.一个最优美的图案（在TC中实现）。
 // 略
-
+*/
 
 
 //66.输入3个数a,b,c，按大小顺序输出 (利用指针方法。)
@@ -1082,29 +1100,221 @@
 
 
 //68有 n 个整数，使其前面各数顺序向后移 m 个位置，最后m个数变成最前面的 m 个数。
-////TODO还没写
-//#include <stdio.h>
-//int main()
-//{
-//    int nums[10];
-//    int m,n;
-//    scanf("%d",&n);
-//    scanf("%d",&m);
-//
-//}
-
 //69.有n个人围成一圈，顺序排号。
 // 从第一个人开始报数（从1到3报数），
 // 凡报到3的人退出圈子，问最后留下的是原来第几号的那位。
 
 //70.写一个函数，求一个字符串的长度，在 main 函数中输入字符串，并输出其长度。
+//#include <stdio.h>
+//int my_str_len(char *a)
+//{
+//    int i = 0;
+//    while (*a++ != '\0')
+//    {
+//        i++;
+//    }
+//    return i;
+//}
+//int main()
+//{
+//    char str[10];
+//    gets(str);
+//    printf("%d", my_str_len(str));
+//    return 0;
+//}
+
 //71.编写input()和output()函数输入，输出5个学生的数据记录。
-//72.创建一个链表。
-//73.反向输出一个链表。
-//74.连接两个链表。
-//75.输入一个整数，并将其反转后输出。
-//76.编写一个函数，输入n为偶数时，调用函数求1/2+1/4+...+1/n,当输入n为奇数时，调用函数1/1+1/3+...+1/n(利用指针函数)。
+//#include <stdio.h>
 //
+//typedef struct Student
+//{
+//    long id;
+//    char name[20];
+//}Stu;
+//
+//void input(Stu * stu)
+//{
+//    for (int i = 0; i < 5; ++i)
+//    {
+//        scanf("%ld", &stu[i].id);
+//        scanf("%s", stu[i].name);
+//    }
+//}
+//
+//void output(Stu *stu)
+//{
+//    for (int i = 0; i < 5; ++i)
+//    {
+//        printf("%ld,%s\n", stu[i].id, stu[i].name);
+//    }
+//}
+//int main()
+//{
+//    Stu stu[5];
+//    input(stu);
+//    output(stu);
+//    return 0;
+//}
+
+//72.创建一个链表。
+//#include <stdio.h>
+//#include <stdlib.h>
+//typedef struct LinkList{
+//    int val;
+//    struct LinkList *next;
+//
+//}LinkList;
+//
+//LinkList * create()
+//{
+//
+//}
+//int main()
+//{
+//
+//}
+
+//73.反向输出一个链表。
+//#include <stdio.h>
+//#include <stdlib.h>
+//typedef struct LinkList
+//{
+//    int val;
+//    struct LinkList *next;
+//}*List;
+//
+//List create()
+//{
+//    List head = (List) malloc(sizeof(List));
+//
+//    head->val = 0;
+//    head->next = NULL;
+//
+//    return head;
+//}
+//void converse(List list)
+//{
+//    if (list->next != NULL)
+//    {
+//
+//        converse(list->next);
+//    }
+//    printf("%d ", list->val);
+//}
+//int main()
+//{
+//    List head = create();
+//    int i,n;
+//    printf("输入想要创建的链表长度:");
+//    scanf("%d", &n);
+//    List p1,p2;
+//
+//    p1 = (List) malloc(sizeof(List));
+//    scanf("%d", &p1->val);
+//    p1->next =NULL;
+//    head->next = p1;
+//    p2 = p1;
+//
+//
+//    for (i = 0; i < n-1; ++i)
+//    {
+//        p1 = (List) malloc(sizeof(List));
+//        scanf("%d", &p1->val);
+//        p1->next = NULL;
+//
+//        p2->next = p1;
+//        p2 = p1;
+//    }
+//
+//    converse(head->next);
+//    return 0;
+//}
+
+
+//74.连接两个链表。
+//#include <stdio.h>
+//#include <stdlib.h>
+//
+//typedef struct Node     //给struct Node* 起别名 为Node
+//{
+//    int data;
+//    struct Node *next;
+//}*Node;
+//
+//Node init()
+//{
+//    Node head = (Node) malloc(sizeof(Node));
+//    head->data = 0;
+//    head->next = NULL;
+//    Node p1,p2;
+//    p1 = (Node) malloc(sizeof(Node));
+//    scanf("%d", &p1->data);
+//    p1->next = NULL;
+//
+//    head->next = p1;
+//    p2 = p1;
+//
+//
+//    for (int i = 0; i < 4; ++i)
+//    {
+//        p1 = (Node) malloc(sizeof(Node));
+//        scanf("%d", &p1->data);
+//        p1->next = NULL;
+//
+//        p2->next = p1;
+//        p2 = p1;
+//    }
+//
+//    return head;
+//}
+//void link(Node link1,Node link2)
+//{
+//    while (link1->next != NULL)
+//    {
+//        link1 = link1->next;
+//    }
+//    link1->next = link2->next;
+//}
+//void putLink(Node link)
+//{
+//    while (link->next != NULL)
+//    {
+//        link = link->next;
+//        printf("%d ", link->data);
+//    }
+//}
+//int main()
+//{
+//    puts("初始化链表1，请输入五个值");
+//    Node head1 = init();
+//    puts("初始化链表2，请输入五个值");
+//    Node head2 = init();
+//    puts("连接中.....");
+//    link(head1, head2);
+//
+//    puts("输出链表1");
+//    putLink(head1);
+//    return 0;
+//}
+
+
+//75.输入一个整数，并将其反转后输出。
+#include <stdio.h>
+int main()
+{
+    int num,n;
+    scanf("%d", &num);
+    n = 0;
+    while (num != 0)
+    {
+        n = n * 10 + num % 10;
+        num /= 10;
+    }
+    printf("%d", n);
+    return 0;
+}
+//76.编写一个函数，输入n为偶数时，调用函数求1/2+1/4+...+1/n,当输入n为奇数时，调用函数1/1+1/3+...+1/n(利用指针函数)。
+
 
 
 
@@ -1115,6 +1325,8 @@
 
 
 //79.字符串排序。
+
+
 
 //80.海滩上有一堆桃子，五只猴子来分。第一只猴子把这堆桃子平均分为五份，多了一个，这只 猴子把多的一个扔入海中，拿走了一份。
 // 第二只猴子把剩下的桃子又平均分成五份，又多了一个，它同样把多的一个扔入海中，
@@ -1139,7 +1351,7 @@
 //    return 0;
 //}
 
-//81.809*??=800*??+9*?? 其中??代表的两位数,809*??为四位数，8*??的结果为两位数，9*??的结果为3位数。
+//81.809 * ?? == 800 * ?? + 9 * ??    其中??代表的两位数,809*??为四位数，8*??的结果为两位数，9*??的结果为3位数。
 // 求??代表的两位数，及809*??后的结果。
 //#include <stdio.h>
 //int main()
@@ -1203,18 +1415,19 @@
 //    printf("奇数的总数为：%d", sum);
 //}
 
-
-
 //84.一个偶数总能表示为两个素数之和。
 //#include <stdio.h>
-//
-//int isPrime(int i){
-//    if(i == 1){
+//#include <math.h>
+//int is_prime(int n)
+//{
+//    int i;
+//    if (n == 1)
+//    {
 //        return 0;
 //    }
-//    for (int j = 2; j < i; ++j)
+//    for (i = 2; i <= sqrt(n); ++i)
 //    {
-//        if(i%j == 0)
+//        if (n % i == 0)
 //        {
 //            return 0;
 //        }
@@ -1223,93 +1436,124 @@
 //}
 //int main()
 //{
-//    //输出一个偶数
-//    int num = 0;
-//    int x;      //num 与i的差
-//    scanf("%d", &num);
-//    //进行循环  循环次数位偶数的大小
-//    //循环中    判断i是否为素数 若为素数 则偶数减去该数并判断差是否为素数
-//    //输出
-//    for (int i = 2; i < num/2 +1; ++i)
+//    int i,n;
+//    scanf("%d", &n);
+//    for (i = 2; i <= n/2; ++i)
 //    {
-//        if(isPrime(i)){
-//            x = num - i;
-//            if (isPrime(x))
-//            {
-//                printf("num = %d + %d\n", i , x);
-//                break;
-//            }
+//        if (is_prime(i) && is_prime(n-i))
+//        {
+//            printf("%d %d", i, n - i);
+//            break;
 //        }
 //    }
-//
 //    return 0;
 //}
 
 
 //85.判断一个素数能被几个9整除。
-
-
-
-
-//86.两个字符串连接程序 。
-
-
-
-
-//87.结构体变量传递
 //#include <stdio.h>
-//
-//struct student{
-//  int x;
-//  char c;
-//}a;
-//
-//void fun(struct student b){
-//    b.x = 2;
-//    b.c = 'b';
-//}s
-//
+//#include <limits.h>
 //int main()
 //{
-//    a.x = 1;
-//    a.c = 'a';
-//    fun(a);
-//    printf("%d", a.x);
-//    printf("%c", a.c);
+//    int i;  //素数
+//    scanf("%d", &i);
+//    long long n = 9;
+//    while (n % i != 0)
+//    {
+//        n = n * 10 + 9;
+//    }
+//
+//    if(n > LONG_MAX)
+//    {
+//        printf("该数不存在");
+//    } else
+//    {    printf("%lld", n);
+//    }
+//
 //
 //    return 0;
 //}
 
-//88.读取7个数（1—50）的整数值，每读取一个值，程序打印出该值个数的 *。
 
 
-//89.某个公司采用公用电话传递数据，数据是四位的整数，在传递过程中是加密的，加密规则如下：
-// 每位数字都加上5,然后用和除以10的余数代替该数字，再将第一位和第四位交换，第二位和第三位交换。
-
-
-
-//90.专升本一题，读结果
+//86.两个字符串连接程序 。
 //#include<stdio.h>
-//#include<stdlib.h>
-//#define M 5
+//#include<string.h>
+//void my_cat(char *a, char *b)
+//{
+//    strcpy(a + strlen(a), b);
+//}
 //int main()
 //{
-//    int a[M]={1,2,3,4,5};
-//    int i,j,t;
-//    i=0;j=M-1;
-//    while(i<j)
-//    {
-//        t=*(a+i);
-//        *(a+i)=*(a+j);
-//        *(a+j)=t;
-//        i++;j--;
-//    }
-//    for(i=0;i<M;i++) {
-//        printf("%d\n",*(a+i));
-//    }
+//    char str1[50];
+//    char str2[50];
+//    gets(str1);
+//    gets(str2);
+//
+//    my_cat(str1, str2);
+//    puts(str1);
+//    return 0;
 //}
 
 
+
+//87.结构体变量传递
+//略
+
+
+//88.读取7个数（1—50）的整数值，每读取一个值，程序打印出该值个数的 *。
+//#include <stdio.h>
+//int main()
+//{
+//    int i, j, n;
+//    for (i = 0; i < 7; ++i)
+//    {
+//        scanf("%d", &n);
+//        while (n < 1 || n > 50)
+//        {
+//            scanf("%d", &n);
+//        }
+//        for (j = 0; j < n; ++j)
+//        {
+//            printf("*");
+//        }
+//        printf("\n");
+//    }
+//    return 0;
+//}
+
+//89.某个公司采用公用电话传递数据，数据是四位的整数，在传递过程中是加密的，加密规则如下：
+// 每位数字都加上5,然后用和除以10的余数代替该数字，再将第一位和第四位交换，第二位和第三位交换。
+//#include <stdio.h>
+//int main()
+//{
+//    int num;
+//    scanf("%d", &num);
+//    int a,b,c,d,t;
+//    a = num % 10;
+//
+//    b = num / 10 % 10;
+//
+//    c = num / 100 % 10;
+//
+//    d = num / 1000;
+//
+//    t = a, a = d, d = t;
+//    t = b, b = c, c = t;
+//    a = a + 10 - 5;
+//    b = b + 10 - 5;
+//    c = c + 10 - 5;
+//    d = d + 10 - 5;
+//
+//    num = a + c * 100 + b * 10 + d * 1000;
+//    printf("%d", num);
+//
+//    return 0;
+//}
+
+/**
+//90.专升本一题，读结果
+// 略
 //91.时间函数举例1
 // 略
 //92.时间函数举例2
@@ -1320,10 +1564,46 @@
 // 略
 //95.简单的结构体应用实例。
 // 略
+*/
+
+
 
 //96.计算字符串中子串出现的次数 。
+//#include <stdio.h>
+//int main()
+//{
+//    int i,j,n;
+//    char str[50], a[20];
+//    gets(str);
+//    gets(a);
+//
+//    for (i = 0, n = 0; str[i] != '\0'; ++i)
+//    {
+//
+//        if (str[i] == a[0])
+//        {
+//            for (j = 0;  a[j] != '\0'; ++j)
+//            {
+//                if (str[i + j] != a[j])
+//                {
+//                    break;
+//                }
+//            }
+//            if (a[j] == '\0')
+//            {
+//                n++;
+//            }
+//
+//        }
+//    }
+//    printf("%d", n);
+//    return 0;
+//}
 
 
+
+
+/**
 //97.从键盘输入一些字符，逐个把它们送到磁盘上去，直到输入一个#为止。
 // 略
 //98.从键盘输入一个字符串，将小写字母全部转换成大写字母，然后输出到一个磁盘文件"test"中保存。 输入的字符串以！结束。
@@ -1333,15 +1613,4 @@
 //100.有五个学生，每个学生有3门课的成绩，从键盘输入以上数据（包括学生号，姓名，三门课成绩），
 // 计算出平均成绩，况原有的数据和计算出的平均分数存放在磁盘文件"stud"中。
 // 略
-
-
-
-
-
-
-
-
-
-
-
-
+*/
