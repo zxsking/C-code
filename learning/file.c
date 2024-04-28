@@ -15,7 +15,7 @@ int main()
     {
 //        printf("%s", strerror(errno));
         perror("fopen");
-        return 1;
+        return 1;s
     }
 
 

@@ -602,6 +602,39 @@ build hbnu.c.exe: C_EXECUTABLE_LINKER__hbnu.2ec_Debug CMakeFiles/hbnu.c.dir/hbnu
   TARGET_PDB = hbnu.c.exe.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target last_test.c
+
+
+#############################################
+# Order-only phony target for last_test.c
+
+build cmake_object_order_depends_target_last_test.c: phony || CMakeFiles/last_test.c.dir
+
+build CMakeFiles/last_test.c.dir/last_test.c.obj: C_COMPILER__last_test.2ec_Debug F$:/C-code/learning/last_test.c || cmake_object_order_depends_target_last_test.c
+  DEP_FILE = CMakeFiles\last_test.c.dir\last_test.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu99
+  OBJECT_DIR = CMakeFiles\last_test.c.dir
+  OBJECT_FILE_DIR = CMakeFiles\last_test.c.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target last_test.c
+
+
+#############################################
+# Link the executable last_test.c.exe
+
+build last_test.c.exe: C_EXECUTABLE_LINKER__last_test.2ec_Debug CMakeFiles/last_test.c.dir/last_test.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\last_test.c.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = last_test.c.exe
+  TARGET_IMPLIB = liblast_test.c.dll.a
+  TARGET_PDB = last_test.c.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target mostclassicial.c
 
 
@@ -859,6 +892,8 @@ build green_book.c: phony green_book.c.exe
 
 build hbnu.c: phony hbnu.c.exe
 
+build last_test.c: phony last_test.c.exe
+
 build mostclassicial.c: phony mostclassicial.c.exe
 
 build new.c: phony new.c.exe
@@ -879,7 +914,7 @@ build suxiaohongbook.c: phony suxiaohongbook.c.exe
 #############################################
 # Folder: F:/C-code/learning/cmake-build-debug
 
-build all: phony LinkedList.c.exe chapter_1.c.exe chapter_10.c.exe chapter_2.c.exe chapter_3.c.exe chapter_4.c.exe chapter_5.c.exe chapter_6.c.exe chapter_7.c.exe chapter_8.c.exe chapter_9.c.exe classic.c.exe english_practice.c.exe example.c.exe file.c.exe green_book.c.exe hbnu.c.exe mostclassicial.c.exe new.c.exe point.c.exe qiangge.c.exe sort_search.c.exe suxiaohongbook.c.exe
+build all: phony LinkedList.c.exe chapter_1.c.exe chapter_10.c.exe chapter_2.c.exe chapter_3.c.exe chapter_4.c.exe chapter_5.c.exe chapter_6.c.exe chapter_7.c.exe chapter_8.c.exe chapter_9.c.exe classic.c.exe english_practice.c.exe example.c.exe file.c.exe green_book.c.exe hbnu.c.exe last_test.c.exe mostclassicial.c.exe new.c.exe point.c.exe qiangge.c.exe sort_search.c.exe suxiaohongbook.c.exe
 
 # =============================================================================
 # Built-in targets

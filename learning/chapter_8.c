@@ -302,3 +302,35 @@
 //
 // }
 //
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+#include <string.h>
+
+char *new(int n)
+{
+    return (char *) malloc(sizeof(char) * n);
+}
+
+void my_free(char *a)
+{
+    free(a);
+}
+int main()
+{
+//    char *a;
+//    int n;
+//    scanf("%d", &n);
+//    a = new(n);
+//    getchar();
+//    fgets(a, n, stdin);
+//    puts(a);
+//    my_free(a);
+//    puts(a);
+
+
+
+    return 0;
+}

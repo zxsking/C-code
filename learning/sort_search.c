@@ -5,7 +5,7 @@ void pt_arr(int a[], int len)
 {
     for (int i = 0; i < len; ++i)
     {
-        printf("%3d", a[i]);
+        printf("%d ", a[i]);
     }
     printf("\n");
 }
@@ -98,7 +98,6 @@ void bidirectional_select_sort(int a[], int len)
                 min = j;
             }
         }
-
 
         if(i == max) max = min;
 

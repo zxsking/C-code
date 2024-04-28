@@ -1,6 +1,3 @@
-//
-// Created by zhanxiaosong on 2024/1/4.
-//
 //1.有 1、2、3、4 四个数字，能组成多少个互不相同且无重复数字的三位数？都是多少
 //#include <stdio.h>
 //void f(){
@@ -1099,10 +1096,77 @@
 //}
 
 
-//68有 n 个整数，使其前面各数顺序向后移 m 个位置，最后m个数变成最前面的 m 个数。
+//68.有 n 个整数，使其前面各数顺序向后移 m 个位置，最后m个数变成最前面的 m 个数。
+//#include <stdio.h>
+//int main()
+//{
+//    int a[100];
+//    int n, m, i, t,j;
+//    scanf("%d%d", &n, &m);
+//    for (i = 0; i < n; ++i)
+//    {
+//        scanf("%d", &a[i]);
+//    }
+//
+//    for (i = 0; i < m; ++i)
+//    {
+//        t = a[n -1];
+//        for (j = n - 1; j > 0; --j)
+//        {
+//            a[j] = a[j - 1];
+//        }
+//        a[j] = t;
+//    }
+//    for (i = 0; i < n; ++i)
+//    {
+//        printf("%d", a[i]);
+//    }
+//    return 0;
+//}
 //69.有n个人围成一圈，顺序排号。
 // 从第一个人开始报数（从1到3报数），
 // 凡报到3的人退出圈子，问最后留下的是原来第几号的那位。
+//#include <stdio.h>
+//#include <stdlib.h>
+//
+//typedef struct LinkedList
+//{
+//    int val;
+//    struct LinkedList *next;
+//} LinkedList;
+//
+//int main()
+//{
+//    int n, m, i = 1, j;         //人数   第几个出局    初始化链表i
+//    //输入总人数和数到几出局
+//    scanf("%d%d", &n, &m);
+//
+//    //给链表头分配空间
+//    LinkedList *head = (LinkedList *) malloc(sizeof(LinkedList)), *p1, *p2, *t;
+//    head->val = 0;
+//    head->next = NULL;
+//
+//    while (i <= n)
+//    {
+//        p1 = (LinkedList *) malloc(sizeof(LinkedList));
+//        p1->val = i++;
+//        head->next == NULL ? (head->next = p1) : (p2->next = p1);
+//        p2 = p1;
+//    }
+//    p2->next = head->next;
+//    while (n-- > 0)
+//    {
+//        for (j = 0; j < m - 1; ++j)
+//            head = head->next;
+//
+//        t = head, head = head->next, t->next = head->next;
+//        head = t;
+//    }
+//    printf("%d\n", head->val);
+//    return 0;
+//}
+
+
 
 //70.写一个函数，求一个字符串的长度，在 main 函数中输入字符串，并输出其长度。
 //#include <stdio.h>
@@ -1299,23 +1363,45 @@
 
 
 //75.输入一个整数，并将其反转后输出。
-#include <stdio.h>
-int main()
-{
-    int num,n;
-    scanf("%d", &num);
-    n = 0;
-    while (num != 0)
-    {
-        n = n * 10 + num % 10;
-        num /= 10;
-    }
-    printf("%d", n);
-    return 0;
-}
+//#include <stdio.h>
+//int main()
+//{
+//    int num,n;
+//    scanf("%d", &num);
+//    n = 0;
+//    while (num != 0)
+//    {
+//        n = n * 10 + num % 10;
+//        num /= 10;
+//    }
+//    printf("%d", n);
+//    return 0;
+//}
 //76.编写一个函数，输入n为偶数时，调用函数求1/2+1/4+...+1/n,当输入n为奇数时，调用函数1/1+1/3+...+1/n(利用指针函数)。
-
-
+//#include <stdio.h>
+//int main()
+//{
+//    int n,i;
+//    float sum;
+//    scanf("%d", &n);
+//    sum = 0;
+//    if (n % 2 == 0)
+//    {
+//        for (i = 2; i <= n; i = i + 2)
+//        {
+//            sum += 1.0/n;
+//        }
+//    } else
+//    {
+//        for (i = 1; i <= n; i = i + 2)
+//        {
+//            sum += 1.0 / i;
+//        }
+//    }
+//
+//    printf("%lf", sum);
+//    return 0;
+//}
 
 
 //77.填空练习（指向指针的指针）。
@@ -1325,13 +1411,38 @@ int main()
 
 
 //79.字符串排序。
+//#include <stdio.h>
+//#include <string.h>
+//void bubble_sort(char *str)
+//{
+//    int len = strlen(str);
+//    int i,j;
+//    char t;
+//    for (i = 0; i < len - 1; ++i)
+//    {
+//        for (j = 0; j < len - i - 1; ++j)
+//        {
+//            if (str[j] > str[j + 1])
+//            {
+//                t = str[j], str[j] = str[j+1], str[j+1] = t;
+//            }
+//        }
+//    }
+//}
+//int main()
+//{
+//    char a[20];
+//    gets(a);
+//    bubble_sort(a);
+//    puts(a);
+//    return 0;
+//}
 
 
 
 //80.海滩上有一堆桃子，五只猴子来分。第一只猴子把这堆桃子平均分为五份，多了一个，这只 猴子把多的一个扔入海中，拿走了一份。
 // 第二只猴子把剩下的桃子又平均分成五份，又多了一个，它同样把多的一个扔入海中，
 // 拿走了一份，第三、第四、第五只猴子都是这样做的， 问海滩上原来最少有多少个桃子？
-//TODO 此题想了很长时间，稍加注意下
 //#include <stdio.h>
 //int main()
 //{

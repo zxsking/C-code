@@ -1,206 +1,234 @@
-
 //CHAPTER SEVEN
 
 // 7.1 写两个函数，分别求最大公约数和最小公倍数
-//  #include <stdio.h>
-//  int gys(int m, int n)
-//  {
-//      int t;
-//      if(m < n)
-//      {
-//          t = m, m = n, n = t;
-//      }
-//      while(m%n)
-//      {
-//          t = m%n;
-//          m = n;
-//          n = t;
-//      }
-//      return n;
-//  }
-
-// int gbs(int m, int n)
-// {
-//     int t = gys(m,n);
-//     return (m*n/t);
-// }
-
-// int main()
-// {
-//     int a,b;
-//     scanf("%d %d",&a,&b);
-//     printf("zdgys:%d\n", gys(a,b));
-//     printf("zxgbs:%d", gbs(a,b));
-//     return 0;
-// }
-
-//7.2 求方程a*pow(x,2)+b*x+c = 0的根，用三个函数分别求当: pow(b,2)-4*a*c大于0、等于0、小于0时的根并输出结果。从主函数输入a,b,c的值
-
 //#include <stdio.h>
-//#include <math.h>
-//
-//void over(float d, float  a, float  b)
+//int gcd(int m, int n)   //迭代实现
 //{
-//    float x1, x2;
-//    x1 = (-b + sqrt(d))/(2 * a);
-//    x2 = (-b - sqrt(d))/(2 * a);
-//
-//    printf("该方程有两个根:x1=%f,x2=%f", x1, x2);
+//    int t;
+//    while (n != 0)
+//    {
+//        t = m % n;
+//        m = n;
+//        n = t;
+//    }
+//    return m;
 //}
-//
-//void equal(float d, float  a, float  b)
+////int gcd(int m,int n) //递归实现
+////{
+////    if (n == 0)
+////    {
+////        return m;
+////    } else
+////    {
+////        return gcd(n, m % n);
+////    }
+////}
+////
+//int lcm(int m, int n)
 //{
-//    float x;
-//    x = (-b + sqrt(d))/(2 * a);
-//    printf("该方程有一个跟:%f", x);
-//}
-//void below(float d, float a, float b)
-//{
-//    printf("没有实数根");
+//    return m * n / gcd(m, n);
 //}
 //int main()
 //{
-//    float a, b, c,d;
-//    printf("输入a,b,c的值");
-//    scanf("%f %f %f", &a, &b, &c);
-//    d = b * b - 4 * a * c;
-//
-//    if(b > 0) over(d, a, b);
-//    if(b == 0) equal(d, a, b);
-//    if(b < 0)below(d, a, b);
+//    int m, n, t;
+//    printf("输入m,n(m>n):");
+//    scanf("%d %d", &m, &n);     //输入m n
+//    if (n > m)      //使用辗转相除要求m>n
+//    {
+//        t = n, n = m, m = t;
+//    }
+//    printf("最大公约数:%d\n", gcd(m, n));
+//    printf("最小公倍数:%d", lcm(m, n));
 //
 //    return 0;
 //}
 
 
+
+//7.2 求方程a*pow(x,2)+b*x+c = 0的根，用三个函数分别求当: pow(b,2)-4*a*c大于0、等于0、小于0时的根并输出结果。从主函数输入a,b,c的值
+//#include <stdio.h>
+//#include <math.h>
+//
+//void two(double a, double b, double c)
+//{
+//    double m, n;
+//    m = -b / (2 * a);
+//    n = sqrt(b * b - 4 * a * c) / (2 * a);
+//
+//    printf("有两个解,分别为:\n");
+//    printf("%lf  ", m - n);
+//    printf("%lf  ", m + n);
+//}
+//
+//void one(double a, double b, double c)
+//{
+//    double m, n;
+//    m = -b / (2 * a);
+//    n = sqrt(b * b - 4 * a * c) / (2 * a);
+//
+//    printf("有两个相同解,为:\n");
+//    printf("%lf  ", m - n);
+//}
+//
+//void zero()
+//{
+//    printf("无解");
+//}
+//
+//int main()
+//{
+//    double a, b, c, t;
+//    scanf("%lf %lf %lf", &a, &b, &c);
+//    t = b * b - 4 * a * c;
+//    if (t > 0)
+//    {
+//        two(a, b, c);
+//    } else if (t == 0)
+//    {
+//        one(a, b, c);
+//    } else
+//    {
+//        zero();
+//    }
+//    return 0;
+//}
+
+
+
 // 7.3 输入一个数判断是否为素数
-//  #include <stdio.h>
-//  #include <math.h>
-//  int isPrime(int a)
-//  {
-//      int i;
-//      for(i = 2; i<=sqrt(a); i++)
-//      {
-//          if(a%i == 0) return 0;
-//      }
-//      return 1;
-// }
+//#include <stdio.h>
+//#include <math.h>
 //
-// int main()
-// {
-//     int a;
-//     printf("请输入一个整数\n") ;
-//     scanf("%d",&a);
-//     if(isPrime(a)){
-//         printf("%d为素数", a);
-//     }else{
-//         printf("%d不为素数", a);
-//     }
+//int isPrime(int a)
+//{
+//    int i;
+//    for (i = 2; i <= sqrt(a); i++)
+//    {
+//        if (a % i == 0) return 0;
+//    }
+//    return 1;
+//}
 //
-//     return 0;
-// }
+//int main()
+//{
+//    int a;
+//    printf("请输入一个整数\n");
+//    scanf("%d", &a);
+//    if (isPrime(a))
+//    {
+//        printf("%d为素数", a);
+//    } else
+//    {
+//        printf("%d不为素数", a);
+//    }
+//
+//    return 0;
+//}
 
 // 4.写一个函数是,使给定的3×3数组行列互换
-//  #include <stdio.h>
-//  void change (int a[3][3])
-//  {
-//      int i,j,t;
-//      for(i= 0; i<2; i++)
-//      {
-//          for(j = i; j<3; j++)
-//          {
-//              t = a[i][j];
-//              a[i][j] = a[j][i];
-//              a[j][i] = t;
-//          }
-//      }
-//  }
-
-// int main()
-// {
-//     int a[3][3];
-//     int i,j;
-//     for(i = 0; i<3;i++)
-//     {
-//         for(j = 0; j<3;j++)
-//         {
-//             scanf("%d",&a[i][j]);
-//         }
-//     }
-
-//     for(i = 0; i<3;i++)
-//     {
-//         for(j = 0; j<3;j++)
-//         {
-//             printf("%2d",a[i][j]);
-//         }
-//         printf("\n");
-//     }
-//     change(a);
-
-//     for(i = 0; i<3;i++)
-//     {
-//         for(j = 0; j<3;j++)
-//         {
-//             printf("%2d",a[i][j]);
-//         }
-//         printf("\n");
-//     }
-// }
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <time.h>
+//#define N 3
+//void change(int a[N][N])
+//{
+//    int i, j, t;
+//    for (i = 0; i < 2; i++)
+//    {
+//        for (j = i; j < 3; j++)
+//        {
+//            t = a[i][j];
+//            a[i][j] = a[j][i];
+//            a[j][i] = t;
+//        }
+//    }
+//}
+//void pt(int (*a)[3])
+//{
+//    int i,j;
+//    for (i = 0; i < N; ++i)
+//    {
+//        for (j = 0; j < N; ++j)
+//        {
+//            printf("%3d", *(*(a+i)+j));
+//        }
+//        printf("\n");
+//    }
+//    printf("\n");
+//}
+//int main()
+//{
+//    int a[N][N],i, j;
+//    srand(time(NULL));
+//
+//    for (i = 0; i < N; i++)
+//    {
+//        for (j = 0; j < N; j++)
+//        {
+//            a[i][j] = rand() % 100 + 1;
+//        }
+//    }
+//    pt(a);
+//    change(a);
+//    pt(a);
+//
+//    return 0;
+//}
 
 
 //7.5 写一个函数,使输入的一个字符串按反序排放,在主函数中输入和输出字符串
 
 //代码:
-//  #include <stdio.h>
-//  #include <string.h>
-//  void convert(char a[100])
-//  {
-//      int n,i,t;
-//      n = strlen(a);
-//      for(i = 0; i< n/2; i++)
-//      {
-//          t = a[i];
-//          a[i] = a[n-i-1];
-//          a[n-i-1] = t;
-//      }
-//  }
-//  int main()
-//  {
-//      char a[100];
-//      gets(a);
-
-//     convert(a);
-//     puts(a);
-
-//     return 0;
-// }
-
-
-//7.6 写一个函数,将连个字符串连接
 //#include <stdio.h>
-//void strc(char *des, char *str)
-//{
-//    int i,j;
-//    i = j =  0;
-//    while(des[i] != '\0')i++;   //将i定位到目标数组结尾\0处
-//    while (str[j] != '\0')  //遍历完str数组结束
-//    {
-//        des[i++] = str[j++];    //逐个连接
-//    }
+//#include <string.h>
 //
-//    des[i] = '\0';    //字符串末尾赋值‘\0’
+//void convert(char *a)
+//{
+//    int len,i;
+//    char t;
+//    len = strlen(a);
+//
+//    for (i = 0; i < len / 2; ++i)
+//    {
+//        t = a[i];
+//        a[i] = a[len - i - 1];
+//        a[len - i - 1] = t;
+//    }
 //}
 //int main()
 //{
-//    char a[80],b[80];
-//    //输入a,b
-//    gets(a);
-//    gets(b);
-//    //连接
-//    strc(a, b);
-//    //输出
-//    puts(a);
+//    char str[20];
+//    gets(str);
+//    convert(str);
+//    puts(str);
+//    return 0;
+//}
+
+//7.6 写一个函数,将连个字符串连接
+//#include <stdio.h>
+//
+//void my_cat(char *s1, char *s2)
+//{
+//    while(*s1)
+//    {
+//        s1++;
+//    }
+//    while(*s2)
+//    {
+//        *s1 = *s2;
+//        s1++;
+//        s2++;
+//    }
+//    *s1 = '\0';
+//}
+//int main()
+//{
+//    char s1[50], s2[10];
+//    gets(s1);
+//    gets(s2);
+//
+//    my_cat(s1, s2);
+//    puts(s1);
 //    return 0;
 //}
 
@@ -209,59 +237,53 @@
 
 //代码:
 //#include <stdio.h>
-//void printaeiou(char *str){
-//    int i,j;
-//    char des[50];
-//    for (i = j = 0; *(str + i) != '\0'; ++i)
+//void cp_aeiou(char *des, char *str)
+//{
+//    while (*str)
 //    {
-//        switch (*(str + i))
+//        switch (*str)
 //        {
-//            case 'a':case 'A':case 'e':case 'E':
-//            case 'i':case 'I':case 'u':case 'U': des[j++] = *(str + i);
-//                break;
-//        }
-//    }
-//    des[j] = '\0';
-//    puts(des);
-//}
 //
+//            case 'a': case 'e':case 'i': case 'o': case 'u':
+//            case 'A': case 'E':case 'I' :case 'O': case 'U':
+//            {
+//                *des = *str;
+//                des++;
+//                break;
+//            }
+//        }
+//        str++;
+//    }
+//    *des = '\0';
+//}
 //int main()
 //{
-//    char str[50];
-//
+//    char des[20], str[20];
 //    gets(str);
-//    printaeiou(str);
-//
+//    cp_aeiou(des, str);
+//    puts(des);
 //    return 0;
 //}
 
 
-
-//7.8 写一个函数,输入一个4位数字,要求输出这4个数字字符,单没两个数字间空一格空格.例如输入1990，应该输出1 9 9 0;
-//#include <stdio.h>
-//void print(int num)
+//7.8 写一个函数,输入一个4位数字,要求输出这4个数字字符,但是两个数字间空一格空格.例如输入1990，应该输出1 9 9 0;
+//#include<stdio.h>
+//#include <string.h>
+//void pt()
 //{
-//    int n,i;
-//    for (i = 0,n = 1000; i < 4; ++i)
+//    char str[5];
+//    int i;
+//    fgets(str, 5, stdin);
+//    for (i = 0; i < 3; ++i)
 //    {
-//        if (n == 1)
-//        {
-//            printf("%d", num / n);
-//        }else{
-//            printf("%d ", num / n);
-//        }
-//        num %= n;
-//        n /=10;
+//        printf("%c", str[i]);
+//        printf(" ");
 //    }
+//    printf("%c",str[i]);
 //}
-//
 //int main()
 //{
-//    int num;
-//
-//    scanf("%d", &num);
-//    print(num);
-//
+//    pt();
 //    return 0;
 //}
 
@@ -269,54 +291,56 @@
 
 //代码
 //#include <stdio.h>
-//void stats(char *str,int *zm, int *sz, int *kg, int *qt)
+//void statistics(char *str, int *letter, int *num, int *space, int *other)
 //{
-//    int i;
-//    *zm = *sz = *kg = *qt = 0;
-//    for (i = 0; *(str + i) != '\0'; ++i)
+//
+//    while (*str)
 //    {
-//        char t  = *(str + i);
-//        if (t >= '0' && t <= '9')
+//        if (*str >= 'a' && *str <= 'z' || *str >= 'A' && *str <= 'Z')
 //        {
-//            (*sz)++;
-//        } else if(t >= 'A' && t <= 'Z' || t >= 'a' && t <= 'z')
+//            (*letter)++;
+//        } else if (*str >= '0' && *str <= '9')
 //        {
-//            (*zm)++;
-//        } else if (t == ' ')
+//            (*num)++;
+//        } else if (*str == ' ')
 //        {
-//            (*kg)++;
-//        }else{
-//            (*qt)++;
+//            (*space)++;
+//        } else
+//        {
+//            (*other)++;
 //        }
+//        str++;
 //    }
 //}
 //
 //int main()
 //{
-//    char str[50];
-//    int zm,sz,kg,qt;
-//    gets(str);
-//    stats(str, &zm, &sz, &kg, &qt);
-//
-//    printf("字母个数:%d", zm);
-//    printf("数字个数:%d", sz);
-//    printf("空格个数:%d", kg);
-//    printf("其他字符个数:%d", qt);
-//
+//    char str[20],ch;
+//    int letter, num, space, other,i;
+//    letter = num = space = other = 0;
+//    for (i = 0; (ch = getchar()) != '\n' && i < 19; ++i)
+//    {
+//        str[i] = ch;
+//    }
+//    statistics(str, &letter, &num, &space, &other);
+//    printf("字母个数:%d", letter);
+//    printf("数字个数:%d", num);
+//    printf("空格个数:%d", space);
+//    printf("其他字符个数:%d", other);
 //    return 0;
 //}
 
 
-
 //7.10 写一个函数,输入一串字符,将此字符串中最长的单词输出。
 //#include <stdio.h>
+//
 //void max_len_pt(char *str)
 //{
 //    int i, j, maxlen, maxi;
 //
 //    for (i = 0, maxlen = 0, maxi = 0; str[i] != '\0'; ++i)
 //    {
-//        for (j = i ; str[j] != '\0' && str[j] != ' '; ++j);
+//        for (j = i; str[j] != '\0' && str[j] != ' '; ++j);
 //        if ((j - i) > maxlen)
 //        {
 //            maxi = i;
@@ -332,6 +356,7 @@
 //    }
 //
 //}
+//
 //int main()
 //{
 //    char a[50];
@@ -412,39 +437,39 @@
 //计算每门科的平均分
 //找出所有50个分数中最高的分数所对应的学生和课程
 //计算平均分方差
-#include <stdio.h>
-#include <math.h>
-typedef struct student{
-    char name[20];
-    float score[5];
-}Stu;
-
-float * per_stu_ave(Stu *stu)
-{
-    float per_stu_sco[10] = {0},sum;
-    int i, j;
-    for (i = 0; i < 10; ++i)
-    {
-        sum = 0;
-        for (j = 0; j < 5; ++j)
-        {
-            sum += stu[i].score[j];
-        }
-        per_stu_sco[i] = sum / 10;
-    }
-
-    return per_stu_sco;
-}
-
-float * per_sub_ave(Stu *stu)
-{
-
-}
-
-int main()
-{
-
-}
+//#include <stdio.h>
+//#include <math.h>
+//typedef struct student{
+//    char name[20];
+//    float score[5];
+//}Stu;
+//
+//float * per_stu_ave(Stu *stu)
+//{
+//    float per_stu_sco[10] = {0},sum;
+//    int i, j;
+//    for (i = 0; i < 10; ++i)
+//    {
+//        sum = 0;
+//        for (j = 0; j < 5; ++j)
+//        {
+//            sum += stu[i].score[j];
+//        }
+//        per_stu_sco[i] = sum / 10;
+//    }
+//
+//    return per_stu_sco;
+//}
+//
+//float * per_sub_ave(Stu *stu)
+//{
+//
+//}
+//
+//int main()
+//{
+//
+//}
 
 
 
@@ -533,33 +558,35 @@ int main()
 
 
 //7.16 写一个函数,输入一个十六进制数,输出相应的十进制数
-    //#include <stdio.h>
-    //int f(char *m)
-    //{
-    //    int n , i;
-    //    n = i  = 0;
-    //    while (*(m + i) != '\0')
-    //    {
-    //        if (m[i] >= '0' && m[i] <= '9')
-    //        {
-    //            n = n * 16 + m[i] - '0';
-    //        } else if (m[i] >= 'a' && m[i] <= 'f')
-    //        {
-    //            n = n * 16 + m[i] - 'a' + 9;
-    //        }
-    //        i++;
-    //    }
-    //
-    //    return n;
-    //}
-    //int main()
-    //{
-    //    char a[20];
-    //    gets(a);
-    //
-    //    printf("%d", f(a));
-    //    return 0;
-    //}
+//#include <stdio.h>
+//
+//int f(char *m)
+//{
+//    int n, i;
+//    n = i = 0;
+//    while (*(m + i) != '\0')
+//    {
+//        if (m[i] >= '0' && m[i] <= '9')
+//        {
+//            n = n * 16 + m[i] - '0';
+//        } else if (m[i] >= 'a' && m[i] <= 'f')
+//        {
+//            n = n * 16 + m[i] - 'a' + 10;
+//        }
+//        i++;
+//    }
+//
+//    return n;
+//}
+//
+//int main()
+//{
+//    char a[20];
+//    gets(a);
+//
+//    printf("%d", f(a));
+//    return 0;
+//}
 
 
 
@@ -573,7 +600,7 @@ int main()
 //    //终止条件
 //    if (n == 1)
 //    {
-//        *(s + n - 1) = num % 10 + '0';
+//        *(s) = num % 10 + '0';
 //    }else{
 //        *(s + n - 1) = num % 10  + '0';
 //        transfer(s, num / 10, n - 1);
@@ -631,3 +658,5 @@ int main()
 //    printf("改天是%d年的第%d天", year, days);
 //    return 0;
 //}
+
+
